@@ -24,17 +24,19 @@ export class MovieDetailsComponent implements OnInit {
 
   rateClicked(rate) {
     this.apiService.rateMovie(rate, this.movie.id).subscribe(
-      result => this.getDetails,
-      error => console.log(error)
-    );
-  }
-
-  getDetails() {
-    this.apiService.getMovie(this.movie.id).subscribe(
-      movie => {
-        this.updateMovie.emit(movie);
+      result =>{
+        console.log(result);
       },
       error => console.log(error)
     );
   }
+
+  // getDetails() {
+  //   this.apiService.getMovie(this.movie.id).subscribe(
+  //     movie => {
+  //       this.updateMovie.emit(movie);
+  //     },
+  //     error => console.log(error)
+  //   );
+  // }
 }

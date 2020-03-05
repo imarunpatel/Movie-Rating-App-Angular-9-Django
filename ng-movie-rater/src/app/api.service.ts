@@ -21,9 +21,9 @@ export class ApiService {
     return this.httpClient.get(this.baseUrl, {headers: this.headers});
   }
 
-  getMovie(id: number) {
-    return this.httpClient.get(`${this.baseUrl}${id}/`, {headers: this.headers});
-  }
+  // getMovie(id: number) {
+  //   return this.httpClient.get(`${this.baseUrl}${id}/`, {headers: this.headers});
+  // }
   
   rateMovie(rate: number, movieId: number) {
     const body = JSON.stringify({stars: rate});
