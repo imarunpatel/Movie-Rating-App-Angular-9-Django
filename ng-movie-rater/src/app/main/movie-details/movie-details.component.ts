@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from '../../api.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ApiService } from '../../api.service';
 export class MovieDetailsComponent implements OnInit {
 
   @Input() movie;
-  @Output() updateMovie = new EventEmitter();
+  // @Output() updateMovie = new EventEmitter();
   rateHovered = 0;
   constructor(
     private apiService: ApiService
