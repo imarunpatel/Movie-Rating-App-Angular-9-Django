@@ -1,6 +1,6 @@
 <!-- <p>main works!</p> -->
 <div class="layout">
 <app-movie-list [movies]="movies" (selectMovie)="selectMovie($event)"></app-movie-list>
-<app-movie-details [movie]="this.selectedMovie"></app-movie-details>  
+<app-movie-details [movie]="this.selectedMovie" (updateMovie)="selectMovie($event)"></app-movie-details>  
 </div>
 
