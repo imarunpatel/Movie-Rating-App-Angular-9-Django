@@ -41,8 +41,12 @@ export class MainComponent implements OnInit {
   }
 
   deletedMovie(movie: Movie) {
-    // TODO remove with API
-    console.log('delete', movie.title)
+    this.apiService.deleteMovie(movie.id).subscribe(
+      data => {
+        console.log(data);
+      },
+      error => console.log(error)
+    );
   }
 
 }
