@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Movie } from '../../models/Movie';
 import { FormGroup, FormControl } from '@angular/forms';
+import { ApiService } from '../../api.service';
 
 @Component({
   selector: 'app-movie-form',
@@ -9,19 +10,30 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class MovieFormComponent implements OnInit {
 
-  @Input() movie: Movie;
+  movieForm;
 
-  movieForm = new FormGroup({
-    title: new FormControl(''),
-    description: new FormControl('')
-  });
+  @Input() set movie(val: Movie){
+    this.movieForm = new FormGroup({
+        title: new FormControl(val.title),
+        description: new FormControl(val.description)
+      });
+  }
 
-  constructor() { }
+  
+
+  constructor(
+    private apiService: ApiService
+  ) { }
 
   ngOnInit(): void {
   }
 
   saveForm() {
     console.log(this.movieForm.value)
+    this.apiService.createMovie(
+      this.movieForm.value.title, this.movieForm.value.description).subscribe(
+        result => console.log(result),
+        error => console.log(error)
+      );
   }
 }
