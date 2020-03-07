@@ -1,0 +1,13 @@
+.movie-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+}
+
+.movie-item i {
+    font-size: 1.5em;
+    margin: 15px 5px;
+}
+.fa-trash {
+    color: red;
+    cursor: pointer;
+}

@@ -1,4 +1,7 @@
 <!-- <p>movie-list works!</p> -->
-<div *ngFor="let movie of movies" (click)="movieClicked(movie)">
-    <h3>{{movie.title}}</h3>
-</div>
+<div *ngFor="let movie of movies"  class="movie-item">
+    <h3 (click)="movieClicked(movie)" >{{movie.title}}</h3> 
+    <i class="far fa-edit" (click)="editMovie(movie)"i></i>
+    <i class="fas fa-trash" (click)="deleteMovie(movie)"></i>
+</div> 
+<button (click)="newMovie()">New Movie</button>
