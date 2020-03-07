@@ -7,6 +7,7 @@ import { Movie } from '../models/Movie';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
+
 export class MainComponent implements OnInit {
 
   movies: Movie[] = [];
@@ -41,7 +42,7 @@ export class MainComponent implements OnInit {
 
   deletedMovie(movie: Movie) {
     // TODO remove with API
-    console.log('delete', movie.title);
+    console.log('delete', movie.title)
   }
 
 }

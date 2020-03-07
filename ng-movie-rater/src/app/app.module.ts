@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from './auth/auth.module';
 import { MainModule } from './main/main.module';
 
+
 import { AppComponent } from './app.component';
 
 const routes: Routes = [

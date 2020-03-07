@@ -1,1 +1,8 @@
-<p>movie-form works!</p>
+<form [formGroup]="movieForm" (ngSubmit)="saveForm()">
+    <label for="">Title</label><br>
+    <input type="text" formControlName="title"><br>
+
+    <label for="">Description</label><br>
+    <textarea type="text" formControlName="description"></textarea><br>
+    <button type="submit">Save</button><br>
+</form>
