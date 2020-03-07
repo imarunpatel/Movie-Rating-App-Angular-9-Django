@@ -6,4 +6,12 @@
 
 h1{
     text-align: center;
+    color: orange;
+    font-size: 2em;
+}
+
+h1 i {
+    color: white;
+    display: inline-block;
+    transform: rotate(30deg);
 }

@@ -3,3 +3,26 @@
     margin: 0px;
     padding: 0px;
 }
+
+button {
+    color: #444444;
+    background-color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 2px;
+    outline: none;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+button:disabled {
+    color: #ffffff;
+    background-color: #444444;
+}
+
+input, textarea {
+    width: 100%;
+    font-size: 0.8em;
+    margin: 8px 0;
+    padding: 10px;
+}
+

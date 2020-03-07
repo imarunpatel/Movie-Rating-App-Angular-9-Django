@@ -4,7 +4,7 @@
 
     <label for="">Description</label><br>
     <textarea type="text" formControlName="description"></textarea><br>
-    <button type="submit">
+    <button type="submit" [disabled]="formDisabled()">
         <span *ngIf="id">Update</span>
         <span *ngIf="!id">Create</span>
     </button><br>
