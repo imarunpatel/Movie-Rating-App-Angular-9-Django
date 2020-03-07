@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Movie } from '../../models/Movie';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ApiService } from '../../api.service';
@@ -12,6 +12,9 @@ export class MovieFormComponent implements OnInit {
 
   movieForm;
   id = null;
+
+  @Output() movieCreated = new EventEmitter<Movie>();
+  @Output() movieUpdated = new EventEmitter<Movie>();
 
   @Input() set movie(val: Movie){
     this.id = val.id;
@@ -33,13 +36,13 @@ export class MovieFormComponent implements OnInit {
     if(this.id) {
      this.apiService.updateMovie(this.id,
       this.movieForm.value.title, this.movieForm.value.description).subscribe(
-        result => console.log(result),
+        (result: Movie) => this.movieUpdated.emit(result),
         error => console.log(error)
       ); 
     } else {
       this.apiService.createMovie(
         this.movieForm.value.title, this.movieForm.value.description).subscribe(
-          result => console.log(result),
+          (result: Movie) => this.movieCreated.emit(result),
           error => console.log(error)
         ); 
     }

@@ -5,7 +5,8 @@
 ></app-movie-list>
 <div>
     <app-movie-details [movie]="this.selectedMovie" (updateMovie)="selectMovie($event)"></app-movie-details>
-    <app-movie-form *ngIf="editedMovie" [movie]="this.editedMovie"></app-movie-form>  
+    <app-movie-form *ngIf="editedMovie" [movie]="this.editedMovie" (movieCreated)="movieCreated($event)"
+    (movieUpdated)="movieUpdated($event)"></app-movie-form>  
 </div>
 
 </div>
